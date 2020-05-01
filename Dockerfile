@@ -1,13 +1,11 @@
 FROM node:12 as build
 # build the app
+
 WORKDIR /app
 
-COPY package.json package-lock.json rollup.config.js sandbox.config.json ./
+COPY package.json package-lock.json rollup.config.js ./
 COPY src ./src
 COPY static ./static
-
-# RUN apk update && apk upgrade && \
-#     apk add --no-cache bash git openssh
 
 RUN npm install
 
