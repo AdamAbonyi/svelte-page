@@ -8,7 +8,8 @@
     "serve": "spassr --serve-spa --serve-ssr",
     "export": "routify export",
     "rollup": "rollup -cw",
-    "routify": "routify -D"
+    "routify": "routify -D",
+    "test": "echo not implemented yet!"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.1.0",

@@ -1,24 +1,10 @@
-# routify-starter
+# Adams Svelte Routify Playground
 
-Starter template for [Routify](https://github.com/sveltech/routify)
+My test project to get my knowledge of Sveltejs and Routfy started. Used the starter template for [Routify](https://github.com/sveltech/routify). 
 
-### Get started
+![Build](https://github.com/AdamAbonyi/svelte-page/workflows/Node.js%20CI/badge.svg)
 
-To use this starter run `npx @sveltech/routify init` in an empty folder.
-
-Alternatively, you can clone this repo.
-
-### Npm scripts
-
-| Syntax           | Description                                                                       |
-|------------------|-----------------------------------------------------------------------------------|
-| `dev`            | Development (port 5000)                                                           |
-| `dev-dynamic`    | Development with dynamic imports                                                  |
-| `build`          | Build a bundled app with SSR + prerendering and dynamic imports                   |
-| `serve`          | Run after a build to preview. Serves SPA on 5000 and SSR on 5005                  |
-| `export`         | Create static pages from content in dist folder (used by `npm run build`)         |
-
-### SSR and pre-rendering
+## SSR and pre-rendering
 
 SSR and pre-rendering are included in the default build process.
 
@@ -30,12 +16,12 @@ Otherwise it will be rendered instantly.
 
 See [src/pages/example/api/[showId].svelte](https://github.com/sveltech/routify-starter/blob/master/src/pages/example/api/%5BshowId%5D.svelte) for an example.
 
-### Production
+## Production
 
 * For SPA or SSR apps please make sure that url rewrite is enabled on the server.
 * For SPA redirect to `__dynamic.html`.
 * For SSR redirect to the lambda function or express server.
 
-### Issues?
+## Issues?
 
 File on Github! See https://github.com/sveltech/routify/issues .
