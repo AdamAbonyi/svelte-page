@@ -1,9 +1,8 @@
-# ./.github/workflows/dockerimage.yml
 name: Release
 
-on: 
-  release:
-    types: [published]
+on: push
+#  release:
+#    types: [ published ]
 
 env:
   IMAGE_NAME: svelte-page
