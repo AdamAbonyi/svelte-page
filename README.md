@@ -2,7 +2,7 @@
 
 My test project to get my knowledge of Sveltejs and Routfy started. Used the starter template for [Routify](https://github.com/sveltech/routify). 
 
-![Build](https://github.com/AdamAbonyi/svelte-page/workflows/Node.js%20CI/badge.svg)
+![Build](https://github.com/ad-ab/svelte-page/workflows/Build/badge.svg)
 
 ## SSR and pre-rendering
 

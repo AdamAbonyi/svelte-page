@@ -9,8 +9,6 @@ COPY static ./static
 
 RUN npm install
 
-ENV NODE_ENV production
-
 RUN npm run build
 
 FROM node:12 as prep
@@ -18,15 +16,10 @@ FROM node:12 as prep
 
 WORKDIR /app
 
-COPY package.json package-lock.json ./
-RUN ls
-RUN npm install
-RUN npm uninstall prettier prettier-plugin-svelte eslint eslint-plugin-svelte3
-
-ENV NODE_ENV production
-
+COPY package.json package-lock.json static ./
 COPY --from=build ./app/dist ./dist
-COPY static ./static
+
+RUN npm install --production
 
 FROM mhart/alpine-node:slim-12
 # run routify

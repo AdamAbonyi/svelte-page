@@ -13,7 +13,7 @@ const staticDir = 'static'
 const distDir = 'dist'
 const buildDir = `${distDir}/build`
 const production = !process.env.ROLLUP_WATCH;
-const bundling = process.env.BUNDLING || !production ? 'dynamic' : 'bundle'
+const bundling = process.env.BUNDLING || production ? 'dynamic' : 'bundle'
 const shouldPrerender = (typeof process.env.PRERENDER !== 'undefined') ? process.env.PRERENDER : !!production
 
 
@@ -96,7 +96,7 @@ const dynamicConfig = {
   ]
 }
 
-console.log(bundling)
+
 const configs = [createConfig(bundledConfig)]
 if (bundling === 'dynamic')
   configs.push(createConfig(dynamicConfig))
