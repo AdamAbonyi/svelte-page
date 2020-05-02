@@ -31,5 +31,5 @@ WORKDIR /app
 COPY index.js server.js ./
 COPY --from=prep /app ./
 
-EXPOSE 5005 5000
+EXPOSE 5005
 CMD ["node", "index.js"]

@@ -19,7 +19,6 @@ jobs:
         - name: Log into registry
           run: echo "${{ secrets.ACR_PASSWORD }}" | docker login xenik.azurecr.io -u ${{ secrets.ACR_USERNAME }} --password-stdin
 
-
         - name: Push image
           run: |
             IMAGE_ID=xenik.azurecr.io/$IMAGE_NAME
@@ -39,5 +38,5 @@ jobs:
             echo IMAGE_ID=$IMAGE_ID
             echo VERSION=$VERSION
 
-            docker tag image $IMAGE_ID:$VERSION
+            docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
             docker push $IMAGE_ID:$VERSION
