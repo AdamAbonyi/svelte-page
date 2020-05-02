@@ -31,7 +31,7 @@
     "spassr": "^1.0.2"
   },
   "dependencies": {
-    "@sveltech/routify": "^1.6.1",
+    "@sveltech/routify": "^1.6.3",
     "svelte": "^3.21.0"
   }
 }
