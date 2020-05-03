@@ -9,6 +9,8 @@ import { terser } from 'rollup-plugin-terser';
 import copy from 'rollup-plugin-copy'
 import del from 'del'
 
+const { imageOptimizer } = require( './src/services/imageOptimizer')
+
 const staticDir = 'static'
 const distDir = 'dist'
 const buildDir = `${distDir}/build`
@@ -61,6 +63,7 @@ function createConfig({ output, inlineDynamicImports, plugins = [] }) {
       postcss({
         plugins: []
       }),
+      
       commonjs(),
 
 
@@ -69,9 +72,10 @@ function createConfig({ output, inlineDynamicImports, plugins = [] }) {
       production && terser(),
 
       ...plugins,
-
+      imageOptimizer()
     ],
-    // following lines were added to remove warnings in the console
+
+    // The following lines were added to remove warnings in the console
     // for svelte-18n - according to the creator its fine and we should ignore them
     moduleContext: {
       './node_modules/intl-format-cache/lib/index.js': 'window',

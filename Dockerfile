@@ -19,7 +19,8 @@ WORKDIR /app
 COPY package.json package-lock.json static ./
 COPY --from=build ./app/dist ./dist
 
-RUN npm install --production
+# add the version of spassr from package.json 
+RUN npm install --production && npm install spassr@$(grep -Po '"spassr":.*' package.json | cut --complement -c -10 | sed s/\"//g)
 
 FROM mhart/alpine-node:slim-12
 # run routify

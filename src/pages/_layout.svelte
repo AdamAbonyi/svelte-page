@@ -1,5 +1,16 @@
 <script>
   import { _, locale } from 'svelte-i18n'
+
+  const links = [
+    {name: 'nav.home', url: '/'},
+    {name: 'nav.bio', url: '/bio'},
+    {name: 'nav.example', url: '/example'},
+  ]
+
+  const langs = [
+    { id: 'cz', name: 'CZ'},
+    { id: 'en', name: 'EN'},
+  ]
 </script>
 
 <style>
@@ -13,16 +24,15 @@
 
 <div>
   <span>
-    <button on:click={() => locale.set('cz')}>CZ</button>
-    <button on:click={() => locale.set('en')}>EN</button>
+    {#each langs as l,i}
+      <button on:click={() => locale.set(l.id)}>{l.name}</button> 
+    {/each}
   </span>
 
   <span>
-    <a href="/">{$_('nav.home')}</a>
-    /
-    <a href="/bio">{$_('nav.bio')}</a>
-    /
-    <a href="/example">{$_('nav.example')}</a>
+  {#each links as l, i}
+    <a href={l.url}>{$_(l.name)}</a>{#if i < links.length - 1}&nbsp;|&nbsp;{/if} 
+  {/each}
   </span>
 
 </div>
