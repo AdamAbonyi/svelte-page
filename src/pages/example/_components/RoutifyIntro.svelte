@@ -1,3 +1,5 @@
-<h1>Adams Sveltejs Playground</h1>
+<script>
+  import { _ } from 'svelte-i18n'
+</script>
 
-<a href="/example">/example</a>
+<h1>{$_('page.index.page_title')}</h1>

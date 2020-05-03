@@ -1,0 +1,18 @@
+{
+  "nav": {
+    "home": "Domů",
+    "bio": "O mě",
+    "example": "Ukázka"
+  },
+  "page": {
+    "index": {
+      "page_title": "Domovská Stránka",
+      "description": "Popis domovské stránky"
+    },
+    "bio": {
+      "page_title": "O mě",
+      "description": "Popis stránky o mě",
+      "title": "O mě"
+    }
+  }
+}

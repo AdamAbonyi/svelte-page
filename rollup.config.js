@@ -2,12 +2,12 @@
 import svelte from 'rollup-plugin-svelte';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
+import postcss from 'rollup-plugin-postcss';
+import json from '@rollup/plugin-json';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import copy from 'rollup-plugin-copy'
 import del from 'del'
-
-
 
 const staticDir = 'static'
 const distDir = 'dist'
@@ -15,7 +15,6 @@ const buildDir = `${distDir}/build`
 const production = !process.env.ROLLUP_WATCH;
 const bundling = process.env.BUNDLING || production ? 'dynamic' : 'bundle'
 const shouldPrerender = (typeof process.env.PRERENDER !== 'undefined') ? process.env.PRERENDER : !!production
-
 
 del.sync(distDir + '/**')
 
@@ -37,6 +36,7 @@ function createConfig({ output, inlineDynamicImports, plugins = [] }) {
           { src: `${staticDir}/__index.html`, dest: distDir, rename: '__app.html', transform },
         ], copyOnce: true
       }),
+
       svelte({
         // enable run-time checks when not in production
         dev: !production,
@@ -57,6 +57,10 @@ function createConfig({ output, inlineDynamicImports, plugins = [] }) {
         browser: true,
         dedupe: importee => importee === 'svelte' || importee.startsWith('svelte/')
       }),
+      json(),
+      postcss({
+        plugins: []
+      }),
       commonjs(),
 
 
@@ -64,8 +68,19 @@ function createConfig({ output, inlineDynamicImports, plugins = [] }) {
       // instead of npm run dev), minify
       production && terser(),
 
-      ...plugins
+      ...plugins,
+
     ],
+    // following lines were added to remove warnings in the console
+    // for svelte-18n - according to the creator its fine and we should ignore them
+    moduleContext: {
+      './node_modules/intl-format-cache/lib/index.js': 'window',
+      './node_modules/intl-messageformat-parser/lib/skeleton.js': 'window',
+      './node_modules/intl-messageformat-parser/lib/parser.js': 'window',
+      './node_modules/intl-messageformat/lib/formatters.js': 'window',
+      './node_modules/intl-messageformat/lib/core.js': 'window',
+      './node_modules/intl-messageformat-parser/lib/normalize.js': 'window'
+    },
     watch: {
       clearScreen: false
     }

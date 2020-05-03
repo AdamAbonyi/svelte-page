@@ -1,0 +1,19 @@
+{
+  "nav": {
+    "home": "Home",
+    "bio": "Bio",
+    "example": "Example"
+  },
+  "page": {
+    "index": {
+      "page_title": "Homepage",
+      "description": "Description of homepage",
+      "goto": "Goto"
+    },
+    "bio": {
+      "page_title": "Bio",
+      "description": "Description of bio",
+      "title": "Bio"
+    }
+  }
+}
