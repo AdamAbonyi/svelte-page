@@ -19,11 +19,14 @@
     object-position: center;
     width: 100%;
     will-change: opacity;
+
+    transition: 1s -webkit-filter ease-in-out;
+    transition: 1s filter ease-in-out;
   }
 
   .blur {
-    -webkit-filter: blur(5px);
-    filter: blur(5px);
+    -webkit-filter: blur(10px);
+    filter: blur(10px);
     transform: scale(1);
   }
 
@@ -39,14 +42,8 @@
 
 <div class:loaded style="width: 100%; max-width:{w}">
   <div style="overflow: hidden;" bind:offsetWidth={containerWidth}>
-    {#if !loaded}
-      <img
-        out:fade={{ duration: 300 }}
-        class="placeholder blur"
-        src="./images/.generated/png/{src}-25.png"
-        alt="placeholder" />
-    {/if}
-    <picture>
+
+    <picture onload={()=> console.log("ahoj")}>
       <source
         type="image/webp"
         srcset={getImageSrc({ src }, 'webp', { containerWidth })} />
@@ -56,8 +53,9 @@
       <img
         use:load
         class="main {c}"
+        class:blur={!loaded}
         alt="alt"
-        srcset="./images/.generated/png/{src}-25.png"
+        srcset="./images/.generated/png/{src}-50.png"
         onerror="this.src =
         'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mMszXpSDwAFYwJEhxButQAAAABJRU5ErkJggg==';"
         loading="lazy" />
