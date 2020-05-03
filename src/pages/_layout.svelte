@@ -18,7 +18,7 @@
   </span>
 
   <span>
-    <a href="/home">{$_('nav.home')}</a>
+    <a href="/">{$_('nav.home')}</a>
     /
     <a href="/bio">{$_('nav.bio')}</a>
     /

@@ -1,7 +1,7 @@
 {
   "nav": {
     "home": "Domů",
-    "bio": "O mě",
+    "bio": "O mně",
     "example": "Ukázka"
   },
   "page": {
@@ -10,9 +10,9 @@
       "description": "Popis domovské stránky"
     },
     "bio": {
-      "page_title": "O mě",
+      "page_title": "O mně",
       "description": "Popis stránky o mě",
-      "title": "O mě"
+      "title": "O mně"
     }
   }
 }
