@@ -1,21 +1,19 @@
 <script>
-  import { _, locale } from 'svelte-i18n'
+  import { url,route } from '@sveltech/routify'
+  import { _,locale, languages } from '../services/i18n'
 
   const links = [
-    {name: 'nav.home', url: '/'},
-    {name: 'nav.bio', url: '/bio'},
-    {name: 'nav.example', url: '/example'},
+    {name: 'nav.home', url: ''},
+    {name: 'nav.bio', url: 'bio'},
+    {name: 'nav.example', url: 'example'},
+    {name: 'nav.bad', url: 'bad'},
   ]
-
-  const langs = [
-    { id: 'cz', name: 'CZ'},
-    { id: 'en', name: 'EN'},
-  ]
+  
 </script>
 
 <style>
   .border {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     margin: auto;
     max-width: 800px;
     padding: 8px 32px;
@@ -24,14 +22,14 @@
 
 <div>
   <span>
-    {#each langs as l,i}
+  {#each languages as l}
       <button on:click={() => locale.set(l.id)}>{l.name}</button> 
-    {/each}
+  {/each}
   </span>
 
   <span>
   {#each links as l, i}
-    <a href={l.url}>{$_(l.name)}</a>{#if i < links.length - 1}&nbsp;|&nbsp;{/if} 
+    <a href={`./${l.url}`}>{$_(l.name)}</a>{#if i < links.length - 1}&nbsp;|&nbsp;{/if} 
   {/each}
   </span>
 

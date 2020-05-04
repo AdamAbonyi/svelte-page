@@ -2,7 +2,8 @@
   "nav": {
     "home": "Domů",
     "bio": "O mně",
-    "example": "Ukázka"
+    "example": "Ukázka",
+    "bad": "404"
   },
   "page": {
     "index": {
@@ -13,6 +14,10 @@
       "page_title": "O mně",
       "description": "Popis stránky o mě",
       "title": "O mně"
+    },
+    "404": {
+      "page_not_found":"Stránka nenalezena.",
+      "go_back": "Jít zpět"
     }
   }
 }
