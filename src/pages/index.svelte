@@ -1,12 +1,7 @@
 <script>
-  import { _ } from 'svelte-i18n'
-  import Image from '../_components/Image/index.svelte'
-  import { setTitle, setDescription } from '../services/meta'
+  import { redirect } from '@sveltech/routify'
+  import { languages } from '../services/i18n'
 
-  setTitle($_('page.index.page_title'))
-  setDescription($_('page.index.description'))
+  $redirect(`${languages[0].id}`)
 </script>
 
-<h1>{$_('page.index.page_title')}</h1>
-<h2>{$_('page.index.description')}</h2>
-<Image src="aa" w="500px" c="rounded"/>

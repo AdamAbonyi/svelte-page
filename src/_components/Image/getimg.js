@@ -31,7 +31,7 @@ export default (imageName, imageFormat, maxSize) => {
     sizes.forEach(currentSize => {
         if ((currentSize) <= maxSize.containerWidth) {
             str = str.concat(
-                `./images/.generated/${imageFormat}/${imageName.src}-${setsrc[i]}.${imageFormat} ${currentSize}w, `
+                `/images/.generated/${imageFormat}/${imageName.src}-${setsrc[i]}.${imageFormat} ${currentSize}w, `
             )
         }
         i++

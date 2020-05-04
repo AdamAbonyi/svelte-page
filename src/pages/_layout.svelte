@@ -1,6 +1,6 @@
 <script>
-  import { url,route } from '@sveltech/routify'
-  import { _,locale, languages } from '../services/i18n'
+  import { url, route, goto } from '@sveltech/routify'
+  import { _,locale, languages, generateNewLanguageUrl } from '../services/i18n'
 
   const links = [
     {name: 'nav.home', url: ''},
@@ -8,7 +8,6 @@
     {name: 'nav.example', url: 'example'},
     {name: 'nav.bad', url: 'bad'},
   ]
-  
 </script>
 
 <style>
@@ -23,13 +22,13 @@
 <div>
   <span>
   {#each languages as l}
-      <button on:click={() => locale.set(l.id)}>{l.name}</button> 
+      <button on:click={() => $goto(generateNewLanguageUrl(l.id))}>{l.name}</button> 
   {/each}
   </span>
 
   <span>
   {#each links as l, i}
-    <a href={`./${l.url}`}>{$_(l.name)}</a>{#if i < links.length - 1}&nbsp;|&nbsp;{/if} 
+    <a href={`/${$locale}/${l.url}`}>{$_(l.name)}</a>{#if i < links.length - 1}&nbsp;|&nbsp;{/if} 
   {/each}
   </span>
 

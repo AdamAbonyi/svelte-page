@@ -54,7 +54,7 @@
         class="main {c}"
         class:blur={!loaded}
         alt="alt"
-        srcset="./images/.generated/png/{src}-50.png"
+        srcset="/images/.generated/png/{src}-50.png"
         onerror="this.src =
         'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mMszXpSDwAFYwJEhxButQAAAABJRU5ErkJggg==';"
         loading="lazy" />
