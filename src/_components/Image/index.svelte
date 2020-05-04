@@ -9,9 +9,8 @@
   let loaded = false
   let containerWidth
 
-  function load(img) {
-    img.onload = () => (loaded = true)
-  }
+  const load = (img) => img.onload = () => (loaded = true)
+  
 </script>
 
 <style>
@@ -20,8 +19,8 @@
     width: 100%;
     will-change: opacity;
 
-    transition: 1s -webkit-filter ease-in-out;
-    transition: 1s filter ease-in-out;
+    transition: 0.4s -webkit-filter ease-in-out;
+    transition: 0.4s filter ease-in-out;
   }
 
   .blur {
@@ -43,7 +42,7 @@
 <div class:loaded style="width: 100%; max-width:{w}">
   <div style="overflow: hidden;" bind:offsetWidth={containerWidth}>
 
-    <picture onload={()=> console.log("ahoj")}>
+    <picture>
       <source
         type="image/webp"
         srcset={getImageSrc({ src }, 'webp', { containerWidth })} />
