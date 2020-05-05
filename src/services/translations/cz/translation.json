@@ -1,7 +1,10 @@
 {
   "nav": {
     "home": "Domů",
-    "bio": "O mně",
+    "about": "O mně",
+    "contact": "Kontakt",
+    "projects": "Projekty",
+    "resume": "Resumé",
     "example": "Ukázka",
     "bad": "404"
   },
@@ -10,13 +13,28 @@
       "page_title": "Domovská Stránka",
       "description": "Popis domovské stránky"
     },
-    "bio": {
-      "page_title": "O mně",
-      "description": "Popis stránky o mě",
+    "about": {
+      "page_title": "O Mně",
+      "description": "Popis stránky o mně",
       "title": "O mně"
     },
+    "contact": {
+      "page_title": "Kontakt",
+      "description": "Jak mě zkontaktovat",
+      "title": "Kontakt"
+    },
+    "projects": {
+      "page_title": "Projekty",
+      "description": "Projekty",
+      "title": "Projekty"
+    },
+    "resume": {
+      "page_title": "Resumé",
+      "description": "Životopis, CV, cokoliv podobného",
+      "title": "Resumé"
+    },
     "404": {
-      "page_not_found":"Stránka nenalezena.",
+      "page_not_found": "Stránka nenalezena.",
       "go_back": "Jít zpět"
     }
   }

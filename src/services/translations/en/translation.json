@@ -1,7 +1,10 @@
 {
   "nav": {
     "home": "Home",
-    "bio": "Bio",
+    "about": "About Me",
+    "contact": "Contact",
+    "projects": "Projects",
+    "resume": "Resume",
     "example": "Example",
     "bad": "404"
   },
@@ -11,13 +14,28 @@
       "description": "Description of homepage",
       "goto": "Goto"
     },
-    "bio": {
-      "page_title": "Bio",
-      "description": "Description of bio",
-      "title": "Bio"
+    "about": {
+      "page_title": "About Me",
+      "description": "Some info about me",
+      "title": "About me"
+    },
+    "contact": {
+      "page_title": "Contact",
+      "description": "Contact me",
+      "title": "Contact"
+    },
+    "projects": {
+      "page_title": "Projects",
+      "description": "projects",
+      "title": "Projects"
+    },
+    "resume": {
+      "page_title": "Resume",
+      "description": "CV, Resume etc.",
+      "title": "Resume"
     },
     "404": {
-      "page_not_found":"Page not found.",
+      "page_not_found": "Page not found.",
       "go_back": "Go back"
     }
   }

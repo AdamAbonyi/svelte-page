@@ -25,3 +25,11 @@ See [src/pages/example/api/[showId].svelte](https://github.com/sveltech/routify-
 ## Issues?
 
 File on Github! See https://github.com/sveltech/routify/issues .
+
+## Todo Tech
+
+* Do some demos from https://rustwasm.github.io/book/
+* Create something simple with https://github.com/deepstreamIO/deepstream.io (https://blog.mgechev.com/2014/12/26/multi-user-video-conference-webrtc-angularjs-yeoman/)
+* Implement Crossfade animation during page transitions
+* webfontloader and anime.js
+* https://github.com/albinotonnina/albinotonnina.com
