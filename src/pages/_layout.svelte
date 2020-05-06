@@ -1,47 +1,42 @@
 <script>
-  import { url, route, goto } from '@sveltech/routify'
-  import { _,locale, languages, generateNewLanguageUrl } from '../services/i18n'
-  
-  import Octocat from '../_components/Octocat.svelte'
+  import Octocat from './_components/Octocat.svelte'
+  import TopNav from './_components/TopNav.svelte'
 
-  const links = [
-    {name: 'nav.home', url: ''},
-    {name: 'nav.about', url: 'about'},
-    {name: 'nav.contact', url: 'contact'},
-    {name: 'nav.projects', url: 'projects'},
-    {name: 'nav.resume', url: 'resume'},
-    // {name: 'nav.example', url: 'example'},
-    {name: 'nav.bad', url: 'bad'},
-  ]
 </script>
 
 <style>
-  .border {
-    /* border: 1px solid black; */
-    margin: auto;
-    max-width: 800px;
-    padding: 8px 32px;
+  .container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 50px auto 50px;
+    height: 100vh;
+    justify-items: center;
+  }
+
+  header {
+    grid-column: span 12;
+  }
+
+  main {
+    grid-column: span 12;
+    
+  }
+
+  footer {
+    grid-column: span 12;
   }
 </style>
 
 <Octocat />
 
-<div>
-  
-  <span>
-  {#each languages as l}
-      <button on:click={() => $goto(generateNewLanguageUrl(l.id))}>{l.name}</button> 
-  {/each}
-  </span>
+<div class="container">
+  <header>
+    <TopNav />
+  </header>
 
-  <span>
-  {#each links as l, i}
-    <a href={`/${$locale}/${l.url}`}>{$_(l.name)}</a>{#if i < links.length - 1}&nbsp;|&nbsp;{/if} 
-  {/each}
-  </span>
+  <main>
+    <slot />
+  </main>
 
-</div>
-
-<div class="border">
-  <slot />
+  <footer>FOOTER</footer>
 </div>
