@@ -8,11 +8,13 @@
     "example": "Example",
     "bad": "404"
   },
+  "footer": {
+    "text": "© 2020"
+  },
   "page": {
     "index": {
-      "page_title": "Homepage",
-      "description": "Description of homepage",
-      "goto": "Goto"
+      "page_title": "Adam Abonyi",
+      "description": "Developer, IT enthusiast"
     },
     "about": {
       "page_title": "About Me",

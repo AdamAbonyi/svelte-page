@@ -8,10 +8,13 @@
     "example": "Ukázka",
     "bad": "404"
   },
+  "footer": {
+    "text": "© 2020"
+  },
   "page": {
     "index": {
-      "page_title": "Domovská Stránka",
-      "description": "Popis domovské stránky"
+      "page_title": "Adam Abonyi",
+      "description": "Vývojář, IT nadšenec"
     },
     "about": {
       "page_title": "O Mně",
@@ -38,4 +41,5 @@
       "go_back": "Jít zpět"
     }
   }
+
 }

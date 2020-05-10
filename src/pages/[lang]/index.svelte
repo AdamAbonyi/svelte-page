@@ -1,12 +1,19 @@
 <script>
-  import { _ } from 'svelte-i18n'
+  import { _, page } from '../../services/i18n'
   import Image from '../../_components/Image/index.svelte'
   import { setTitle, setDescription } from '../../services/meta'
 
-  setTitle($_('page.index.page_title'))
-  setDescription($_('page.index.description'))
+  // page meta
+  const t = page('index')
+  setTitle($_(t`page_title`))
+  setDescription($_(t`description`))
 </script>
 
-<h1>{$_('page.index.page_title')}</h1>
-<h2>{$_('page.index.description')}</h2>
-<Image src="aa" w="500px" c="rounded"/>
+<style>
+</style>
+
+<div>
+  <Image src="aa" w="500px" style="width:200px"/>
+  <h1>{$_(t`page_title`)}</h1>
+  <h2>{$_(t`description`)}</h2>
+</div>

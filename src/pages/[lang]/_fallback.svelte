@@ -1,6 +1,12 @@
 <script>
   import { url, route } from '@sveltech/routify'
-  import { _ } from '../../services/i18n'
+  import { _, page } from '../../services/i18n'
+  import { setTitle, setDescription } from '../../services/meta'
+
+
+  const t = page('404')
+    setTitle($_(t`page_not_found`))
+    setDescription($_(t`page_not_found`))
 </script>
 
 <style>
@@ -19,7 +25,7 @@
 <div class="e404">
   <div class="huge">404</div>
   <div class="big">
-    {$_('page.404.page_not_found')}
+    {$_(t`page_not_found`)}
     <!-- link to the parent folder of _fallback.svelte -->
     <a href={$url('/')}>{$_('page.404.go_back')}</a>
   </div>

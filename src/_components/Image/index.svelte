@@ -1,16 +1,17 @@
 <script>
   import getImageSrc from './getimg.js'
   import { fade } from 'svelte/transition'
-  
+
   export let w = '100%'
   export let c = ''
   export let src = ''
+  export let style
 
   let loaded = false
   let containerWidth
 
   const load = (img) => img.onload = () => (loaded = true)
-  
+
 </script>
 
 <style>
@@ -39,10 +40,10 @@
   }
 </style>
 
-<div class:loaded style="width: 100%; max-width:{w}">
+<div class:loaded style="width: 100%; max-width:{w}; {style}">
   <div style="overflow: hidden;" bind:offsetWidth={containerWidth}>
 
-    <picture>
+    <picture style="width: 100%; max-width:{w}; {style}">
       <source
         type="image/webp"
         srcset={getImageSrc({ src }, 'webp', { containerWidth })} />

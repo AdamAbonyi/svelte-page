@@ -1,5 +1,5 @@
 export default (imageName, imageFormat, maxSize) => {
-    let setsrc = [50, 100, 200,
+    let setsrc = [200,
         320,
         420,
         520,
@@ -13,7 +13,7 @@ export default (imageName, imageFormat, maxSize) => {
         1920,
         1920
     ]
-    let sizes = [25, 50, 100,
+    let sizes = [100,
         200,
         320,
         420,
