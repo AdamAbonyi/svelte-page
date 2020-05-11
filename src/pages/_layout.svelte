@@ -19,13 +19,11 @@
 
   main {
     grid-column: span 12;
-
   }
 
   footer {
     grid-column: span 12;
   }
-
 </style>
 
 <Octocat />

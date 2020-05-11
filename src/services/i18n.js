@@ -1,5 +1,4 @@
 import { addMessages, locale, _ } from 'svelte-i18n';
-import { setTitle, setDescription } from './meta'
 
 import en from './translations/en/translation.json'
 import cz from './translations/cz/translation.json'
@@ -19,7 +18,7 @@ function setupI18n({ withLocale: _locale } = { withLocale: 'en' }) {
 }
 
 function generateNewLanguageUrl(lang, url = window.location.pathname) {
-    const [l, ...path] = url.split('/').filter(x=>x)
+    const [_, ...path] = url.split('/').filter(x=>x)
     if (isSupportedLanguage(lang)) {
       locale.set(lang)
       return `/${lang}/${path.join('/')}`

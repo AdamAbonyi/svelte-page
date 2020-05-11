@@ -3,10 +3,9 @@
   import { _, page } from '../../services/i18n'
   import { setTitle, setDescription } from '../../services/meta'
 
-
   const t = page('404')
-    setTitle($_(t`page_not_found`))
-    setDescription($_(t`page_not_found`))
+  setTitle($_(t`page_not_found`))
+  setDescription($_(t`page_not_found`))
 </script>
 
 <style>

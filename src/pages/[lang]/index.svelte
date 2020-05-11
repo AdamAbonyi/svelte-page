@@ -10,10 +10,11 @@
 </script>
 
 <style>
+
 </style>
 
 <div>
-  <Image src="aa" w="500px" style="width:200px"/>
+  <Image src="aa" w="500px" style="width:200px" />
   <h1>{$_(t`page_title`)}</h1>
   <h2>{$_(t`description`)}</h2>
 </div>

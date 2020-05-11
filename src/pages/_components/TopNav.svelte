@@ -24,13 +24,13 @@
     flex-flow: row wrap;
     /* This aligns items to the end line on main-axis */
     justify-content: flex-end;
-    padding:16px;
+    padding: 16px;
   }
 
   .lang {
     /* padding:16px; */
-    margin-top:-8px;
-    margin-left:8px;
+    margin-top: -8px;
+    margin-left: 8px;
   }
 </style>
 
@@ -48,4 +48,3 @@
     {/each}
   </div>
 </div>
-

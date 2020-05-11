@@ -4,4 +4,3 @@
 
   $redirect(`${languages[0].id}`)
 </script>
-
