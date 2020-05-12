@@ -1,4 +1,6 @@
 import { addMessages, locale, _ } from 'svelte-i18n';
+import { metatags } from '@sveltech/routify'
+import { onDestroy } from 'svelte'
 
 import en from './translations/en/translation.json'
 import cz from './translations/cz/translation.json'
@@ -27,8 +29,15 @@ function generateNewLanguageUrl(lang, url = window.location.pathname) {
     }
 }
 
-
 const page = page => title => `page.${page}.${title}`
 
+const setMeta = (title, description) =>
+  onDestroy(_.subscribe(l => {
+  metatags.title=l(title)
+  metatags.description=description ? l(description) : undefined
+}))
 
-export { _, locale, setupI18n, languages, isSupportedLanguage, generateNewLanguageUrl, page };
+
+export { _, setMeta, locale, setupI18n, languages, isSupportedLanguage, generateNewLanguageUrl, page };
+
+

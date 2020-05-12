@@ -19,7 +19,10 @@
     "about": {
       "page_title": "O Mně",
       "description": "Popis stránky o mně",
-      "title": "O mně"
+      "title": "O mně",
+      "text1": "Od malička mě baví vše kolem počítačů. Poslední dobou jsem se zabavoval děláním koblih v blenderu nebo se učil jak hackovat na Darknet Diaries.",
+      "text2": "Proto jsem se rozhodl udělat tyhle stránky v technologii kterou jsem ještě nevyzkoušel, abych vám o tom všem mohl povědět. Jo a taky miluju SvelteJs."
+
     },
     "contact": {
       "page_title": "Kontakt",
@@ -37,7 +40,7 @@
       "title": "Resumé"
     },
     "404": {
-      "page_not_found": "Stránka nenalezena.",
+      "page_not_found": "Stránka nenalezena",
       "go_back": "Jít zpět"
     }
   }

@@ -1,12 +1,11 @@
 <script>
-  import { _, page } from '../../services/i18n'
-  import { setTitle, setDescription } from '../../services/meta'
+  import { _, setMeta, page } from '../../services/i18n'
 
-  // page meta
   const t = page('about')
-  setTitle($_(t`page_title`))
-  setDescription($_(t`description`))
+  setMeta(t`page_title`, t`description`)
 </script>
 
 <h1>{$_(t`page_title`)}</h1>
 <h2>{$_(t`description`)}</h2>
+<p>{$_(t`text1`)}</p>
+<p>{$_(t`text2`)}</p>

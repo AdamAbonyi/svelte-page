@@ -16,4 +16,20 @@
   }
 </script>
 
-<slot />
+<style>
+  .content {
+    max-width: 800px;
+  }
+
+  * :global(h1) {
+    text-align: center;
+  }
+
+  * :global(h2) {
+    text-align: center;
+  }
+</style>
+
+<div class="content">
+  <slot />
+</div>

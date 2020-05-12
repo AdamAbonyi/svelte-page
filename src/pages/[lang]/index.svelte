@@ -1,12 +1,10 @@
 <script>
-  import { _, page } from '../../services/i18n'
   import Image from '../../_components/Image/index.svelte'
-  import { setTitle, setDescription } from '../../services/meta'
 
-  // page meta
+  import { _, setMeta, page } from '../../services/i18n'
+
   const t = page('index')
-  setTitle($_(t`page_title`))
-  setDescription($_(t`description`))
+  setMeta(t`page_title`, t`description`)
 </script>
 
 <style>
