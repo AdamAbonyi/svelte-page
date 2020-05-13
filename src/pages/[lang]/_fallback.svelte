@@ -1,3 +1,4 @@
+<!-- routify:options index=99 -->
 <script>
   import { route } from '@sveltech/routify'
   import { _, locale, setMeta, page } from '../../services/i18n'

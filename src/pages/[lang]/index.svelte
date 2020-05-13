@@ -1,3 +1,4 @@
+<!-- routify:options index=0 -->
 <script>
   import Image from '../../_components/Image/index.svelte'
 

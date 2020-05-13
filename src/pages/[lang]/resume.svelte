@@ -1,3 +1,4 @@
+<!-- routify:options index=4 -->
 <script>
   import { _, setMeta, page } from '../../services/i18n'
 
