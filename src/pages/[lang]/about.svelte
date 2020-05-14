@@ -1,12 +1,22 @@
 <!-- routify:options index=1 -->
 <script>
   import { _, setMeta, page } from '../../services/i18n'
+  import { send, receive } from '../../services/crossfade'
+  import { fade } from 'svelte/transition'
+
+  import Image from '../../_components/Image/index.svelte'
 
   const t = page('about')
   setMeta(t`page_title`, t`description`)
 </script>
 
-<h1>{$_(t`page_title`)}</h1>
-<h2>{$_(t`description`)}</h2>
+<div class="cf" transition:fade>
+<h1 out:send={{ key: 'title' }} in:receive={{ key: 'title' }}>{$_(t`page_title`)}</h1>
+<h2  out:send={{ key: 'description' }} in:receive={{ key: 'description' }}>{$_(t`description`)}</h2>
 <p>{$_(t`text1`)}</p>
 <p>{$_(t`text2`)}</p>
+
+<div out:send={{ key: 'image' }} in:receive={{ key: 'image' }}>
+<Image src="aa" w="200px" style="width:50px" />
+</div>
+</div>

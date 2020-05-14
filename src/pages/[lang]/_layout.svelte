@@ -2,6 +2,9 @@
   import { TabsTransition } from "@sveltech/routify/decorators";
   import { writable } from "svelte/store"
 
+  import { BaseTransition } from "@sveltech/routify/decorators"
+  import { fade } from 'svelte/transition'
+
   import { url, route, redirect } from '@sveltech/routify'
   import {
     _,
@@ -14,6 +17,21 @@
 
   export let lang
   const width = writable()
+
+  const configs = [
+    {
+        condition: c => c.toHigherIndex,
+        transition: fade,
+        inParams: {duration: 500}, 
+        outParams: {duration: 500}  
+    },
+    {
+        condition: c => c.toLowerIndex,
+        transition: fade,
+        inParams: {duration: 500}, 
+        outParams: {duration: 500}  
+    }
+  ]
 
   if (!isSupportedLanguage(lang)) {
     const [l, ...path] = window.location.pathname.split('/').filter(x => x)
@@ -42,18 +60,29 @@
   }
 
   .content {
-    margin-left:auto;
-    margin-right:auto;
+
+  }
+
+  * :global(.cf) {
+    position:absolute;
+    top:50px;
+    bottom:50px;
     width:800px;
   }
 
 </style>
-
+<!-- 
+<BaseTransition {configs}>
+  <slot />
+</BaseTransition> -->
   
-<div class="inset" bind:offsetWidth={$width}>
+<!-- <div class="inset" bind:offsetWidth={$width}>
   <div class="content">
-    <slot  decorator={TabsTransition} scoped={{ width }} />
+    <slot  decorator={BaseTransition} scoped={{ width }} />
   </div>
-  
+</div> -->
+
+<div class="content">
+    <slot />
 </div>
 

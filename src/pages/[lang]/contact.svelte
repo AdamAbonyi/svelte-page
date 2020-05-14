@@ -1,10 +1,21 @@
 <!-- routify:options index=2 -->
 <script>
   import { _, setMeta, page } from '../../services/i18n'
+  import { send, receive } from '../../services/crossfade'
+  import { fade } from 'svelte/transition'
 
   const t = page('contact')
   setMeta(t`page_title`, t`description`)
 </script>
 
-<h1>{$_(t`page_title`)}</h1>
-<h2>{$_(t`description`)}</h2>
+<style>
+  .cf {
+    right:0
+  }
+</style>
+
+<div class="cf" transition:fade>
+  <h1 out:send={{ key: 'title' }} in:receive={{ key: 'title' }}>{$_(t`page_title`)}</h1>
+  <h2 out:send={{ key: 'description' }} in:receive={{ key: 'description' }}>{$_(t`description`)}</h2>
+</div>
+
