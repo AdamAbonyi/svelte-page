@@ -11,16 +11,14 @@
 </script>
 
 <style>
-
+  .center {
+    text-align:center;
+  }
 </style>
 
-<div class="cf" transition:fade>
+<div class="cf center" transition:fade>
+  <img src="/aa.webp" alt="Adam Abonyi" style="width:200px;"  out:send={{ key: 'image' }} in:receive={{ key: 'image' }} />
+  <br />
   <h1 out:send={{ key: 'title' }} in:receive={{ key: 'title' }}>{$_(t`page_title`)}</h1>
   <h2 out:send={{ key: 'description' }} in:receive={{ key: 'description' }}>{$_(t`description`)}</h2>
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <div out:send={{ key: 'image' }} in:receive={{ key: 'image' }}><Image src="aa" w="500px" style="width:200px"  /></div>
 </div>

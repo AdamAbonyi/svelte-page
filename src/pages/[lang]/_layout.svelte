@@ -42,15 +42,6 @@
 </script>
 
 <style>
-  .inset {
-    position: absolute;
-    top: 50px;
-    left:0;
-    right:0;
-    bottom: 50px;
-    overflow: hidden;
-  }
-
   * :global(h1) {
     text-align: center;
   }
@@ -59,23 +50,17 @@
     text-align: center;
   }
 
-  .content {
-
-  }
-
   * :global(.cf) {
     position:absolute;
+    left:3rem;
+    right:3rem;
     top:50px;
     bottom:50px;
-    width:800px;
   }
 
+
+
 </style>
-<!-- 
-<BaseTransition {configs}>
-  <slot />
-</BaseTransition> -->
-  
 <!-- <div class="inset" bind:offsetWidth={$width}>
   <div class="content">
     <slot  decorator={BaseTransition} scoped={{ width }} />
@@ -83,6 +68,8 @@
 </div> -->
 
 <div class="content">
+  <div class="cf" transition:fade>
     <slot />
+  </div>
 </div>
 

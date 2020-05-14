@@ -20,10 +20,10 @@
   main {
     grid-column: span 12;
   }
-
+/* 
   footer {
     grid-column: span 12;
-  }
+  } */
 </style>
 
 <Octocat />
@@ -37,7 +37,7 @@
     <slot />
   </main>
 
-  <footer>
+  <!-- <footer>
     <Footer />
-  </footer>
+  </footer> -->
 </div>
