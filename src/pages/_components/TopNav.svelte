@@ -1,5 +1,5 @@
 <script>
-  import { url, route, goto, isActive } from '@sveltech/routify'
+  import { goto, isActive } from '@sveltech/routify'
   import {
     _,
     locale,
@@ -19,26 +19,32 @@
 
 <style>
   .container {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
     display: flex;
     flex-flow: row wrap;
     /* This aligns items to the end line on main-axis */
-    justify-content: flex-end;
-    padding: 16px;
+    justify-content: center;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    /* z-index: 20; */
   }
 
   .lang {
     margin-top: -8px;
     margin-left: 8px;
   }
-
 </style>
 
 <div class="container">
   {#each links as l, i}
     {#if $isActive(`/${$locale}/${l.url || 'index'}`)}
-    <span>{$_(l.name)}</span>
+      <span>{$_(l.name)}</span>
     {:else}
-    <a href={`/${$locale}/${l.url}`}>{$_(l.name)}</a>
+      <a href={`/${$locale}/${l.url}`}>{$_(l.name)}</a>
     {/if}
     {#if i < links.length - 1}&nbsp;|&nbsp;{/if}
   {/each}
