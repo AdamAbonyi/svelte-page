@@ -8,11 +8,6 @@
 </script>
 
 <style>
-  .background-image {
-    background-image: url('/images/responsive/typewriter.jpg');
-    opacity: 0.4;
-  }
-
   .content {
     width: 700px;
     margin-left: auto;
@@ -21,15 +16,10 @@
 </style>
 
 <!-- routify:options index=1 -->
-<div class="background-image" transition:fade />
 <div class="cf" transition:fade>
 
-  <h1 out:send={{ key: 'title' }} in:receive={{ key: 'title' }}>
-    {$_(t`page_title`)}
-  </h1>
-  <h2 out:send={{ key: 'description' }} in:receive={{ key: 'description' }}>
-    {$_(t`description`)}
-  </h2>
+  <h1>{$_(t`page_title`)}</h1>
+  <h3>{$_(t`description`)}</h3>
   <br />
 
   <div class="content">
