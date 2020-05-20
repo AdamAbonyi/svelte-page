@@ -3,6 +3,8 @@
   import { send, receive } from '../../services/crossfade'
   import { fade } from 'svelte/transition'
 
+  import TopNav from '../_components/TopNav.svelte'
+
   const t = page('index')
   setMeta(t`page_title`, t`description`)
 </script>
@@ -33,4 +35,5 @@
   <h3 out:send={{ key: 'description' }} in:receive={{ key: 'description' }}>
     {$_(t`description`)}
   </h3>
+  <TopNav />
 </div>

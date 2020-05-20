@@ -19,24 +19,20 @@
     "about": {
       "page_title": "About Me",
       "description": "... some info about me",
-      "title": "About me",
       "text1": "I like to do stuff like programming and playing with computers. I like to do basically everything with computers. Recently I enjoyed modeling donuts in blender or learning how to hack stuff on Darknet Diaries.",
       "text2": "I decided to create this page in a technology I never worked with just so I can write about it. Oh and I love SvelteJs if you couldnt tell."
     },
     "contact": {
       "page_title": "Contact",
-      "description": "...a way how to contact me",
-      "title": "Contact"
+      "description": "...a way how to contact me"
     },
     "projects": {
       "page_title": "Projects",
-      "description": "...something I have worked on",
-      "title": "Projects"
+      "description": "...something I have worked on"
     },
     "resume": {
       "page_title": "Resume",
-      "description": "CV, Resume etc.",
-      "title": "Resume"
+      "description": "CV, Resume etc."
     },
     "404": {
       "page_not_found": "Page not found",

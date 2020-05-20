@@ -6,31 +6,25 @@
     languages,
     generateNewLanguageUrl,
   } from '../../services/i18n'
+  import { send, receive } from '../../services/crossfade'
 
   const links = [
-    { name: 'nav.home', url: '' },
-    { name: 'nav.about', url: 'about' },
-    { name: 'nav.contact', url: 'contact' },
-    { name: 'nav.projects', url: 'projects' },
-    { name: 'nav.resume', url: 'resume' },
-    { name: 'nav.bad', url: 'bad' },
+    { name: 'page.index.page_title', url: '' },
+    { name: 'page.about.page_title', url: 'about' },
+    { name: 'page.contact.page_title', url: 'contact' },
+    { name: 'page.projects.page_title', url: 'projects' },
+    { name: 'page.resume.page_title', url: 'resume' }
   ]
 </script>
 
 <style>
   .container {
-    position: absolute;
-
-    top: 0;
-    left: 0;
-    right: 0;
     display: flex;
     flex-flow: row wrap;
     /* This aligns items to the end line on main-axis */
     justify-content: center;
     padding-top: 16px;
     padding-bottom: 16px;
-    /* z-index: 20; */
   }
 
   .lang {
@@ -51,7 +45,7 @@
 
   <div class="lang">
     {#each languages as l}
-      <button on:click={() => $goto(generateNewLanguageUrl(l.id))}>
+      <button on:click={() => $goto(generateNewLanguageUrl(l.id))} >
         {l.name}
       </button>
     {/each}

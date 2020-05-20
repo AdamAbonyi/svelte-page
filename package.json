@@ -36,8 +36,8 @@
     "sharp": "^0.25.2"
   },
   "dependencies": {
-    "@sveltech/routify": "^1.7.8",
-    "svelte": "^3.22.2",
+    "@sveltech/routify": "^1.7.11",
+    "svelte": "^3.22.3",
     "svelte-i18n": "^3.0.3",
     "webfontloader": "^1.6.28"
   }
