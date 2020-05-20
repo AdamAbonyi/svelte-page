@@ -10,7 +10,7 @@
 <!-- routify:options index=3 -->
 <div class="background-image" transition:fade />
 <div class="cf" transition:fade>
-  <h1>{$_(t`page_title`)}</h1>
+  <h1 out:send={{ key: 'projects' }} in:receive={{ key: 'projects' }}>{$_(t`page_title`)}</h1>
   <h3>{$_(t`description`)}</h3>
 
   <span>

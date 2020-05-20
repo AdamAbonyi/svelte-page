@@ -67,3 +67,10 @@ button:not(:disabled):active {
 button:focus {
 	border-color: #666;
 }
+
+
+div.test { position:absolute; width:50%; height:50% }
+#NW { top:0;   left:0;    }
+#NE { top:0;   left:50%;  }
+#SW { top:50%; left:0;    }
+#SE { top:50%; left:50%;  }   

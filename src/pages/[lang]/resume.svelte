@@ -9,7 +9,7 @@
 
 <!-- routify:options index=4 -->
 <div class="cf" transition:fade>
-  <h1>{$_(t`page_title`)}</h1>
+  <h1 out:send={{ key: 'resume' }} in:receive={{ key: 'resume' }}>{$_(t`page_title`)}</h1>
   <h3>{$_(t`description`)}</h3>
 
   <span>
