@@ -73,7 +73,7 @@ function imageOptimizer() {
     fromDir(`${pathPublic}/responsive`, '.jpg');
     fromDir(`${pathPublic}/responsive`, '.png');
     fromDir(`${pathPublic}/responsive`, '.webp');
-    process.stdout.write("\rImage optimization done");
+    process.stdout.write("\nImage optimization done\n");
 }
 
 module.exports.imageOptimizer = imageOptimizer
