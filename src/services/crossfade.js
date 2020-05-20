@@ -1,14 +1,17 @@
 import { quintOut } from 'svelte/easing'
 import { crossfade } from 'svelte/transition'
+
+const speed = 1000
+
 const [send, receive] = crossfade({
   easing: quintOut,
-  duration: d => 500/*Math.sqrt(d * 5000)*/,
-  fallback (node, params) {
+  duration: () => speed,
+  fallback (node) {
     const style = getComputedStyle(node)
     const transform = style.transform === 'none' ? '' : style.transform
 
     return {
-      duration: 500,
+      duration: speed,
       easing: quintOut,
       css: t => `
                 transform: ${transform} scale(${t});

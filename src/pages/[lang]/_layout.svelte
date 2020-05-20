@@ -23,7 +23,11 @@
     text-align: center;
   }
 
+  * :global(h3) {
+    text-align: center;
+  }
   * :global(.cf) {
+    text-align: center;
     position: absolute;
     left: 0;
     right: 0;

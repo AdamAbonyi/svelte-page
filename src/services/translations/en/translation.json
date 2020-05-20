@@ -18,19 +18,19 @@
     },
     "about": {
       "page_title": "About Me",
-      "description": "Some info about me",
+      "description": "... some info about me",
       "title": "About me",
       "text1": "I like to do stuff like programming and playing with computers. Basically I like to do basically everything with computers. Recently I enjoyed doing donuts in blender or learning how to hack stuff on Darknet Diaries.",
       "text2": "So I decided to create this page in a technology I never worked with just so I can write about it. Oh and I love SvelteJs if you couldnt tell."
     },
     "contact": {
       "page_title": "Contact",
-      "description": "Contact me",
+      "description": "...a way how to contact me",
       "title": "Contact"
     },
     "projects": {
       "page_title": "Projects",
-      "description": "projects",
+      "description": "...something I have worked on",
       "title": "Projects"
     },
     "resume": {

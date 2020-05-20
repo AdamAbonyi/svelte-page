@@ -7,20 +7,13 @@
   setMeta(t`page_title`, t`description`)
 </script>
 
-<style>
-  .background-image {
-    background-image: url('/images/responsive/computer.jpg');
-    opacity: 0.3;
-  }
-</style>
-
 <!-- routify:options index=3 -->
 <div class="background-image" transition:fade />
 <div class="cf" transition:fade>
-  <h1 out:send={{ key: 'title' }} in:receive={{ key: 'title' }}>
-    {$_(t`page_title`)}
-  </h1>
-  <h2 out:send={{ key: 'description' }} in:receive={{ key: 'description' }}>
-    {$_(t`description`)}
-  </h2>
+  <h1>{$_(t`page_title`)}</h1>
+  <h3>{$_(t`description`)}</h3>
+
+  <span>
+    Create a list of projects. Each project will leade to a separate page
+  </span>
 </div>

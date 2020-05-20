@@ -7,22 +7,15 @@
   setMeta(t`page_title`, t`description`)
 </script>
 
-<style>
-  .background-image {
-    background-image: url('/images/responsive/phone3.jpg');
-    background-position-y: -220px;
-    opacity: 0.4;
-  }
-</style>
-
 <!-- routify:options index=2 -->
 <div class="background-image" transition:fade />
 
 <div class="cf" transition:fade>
-  <h1 out:send={{ key: 'title' }} in:receive={{ key: 'title' }}>
-    {$_(t`page_title`)}
-  </h1>
-  <h2 out:send={{ key: 'description' }} in:receive={{ key: 'description' }}>
-    {$_(t`description`)}
-  </h2>
+  <h1>{$_(t`page_title`)}</h1>
+  <h3>{$_(t`description`)}</h3>
+
+  <span>
+    Add a contact game here. Small game, if you solve it it sends you a token to
+    send a message to me through the UI... or something like that
+  </span>
 </div>
