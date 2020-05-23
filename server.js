@@ -3,6 +3,8 @@
 const express = require('express')
 const { ssr } = require('@sveltech/ssr')
 const path = require('path')
+const fs = require('fs')
+const compression = require('compression')
 
 module.exports.startServers = function (options) {
     const { spaPort, ssrPort, serveSpa, serveSsr } = { ...options }
@@ -10,7 +12,6 @@ module.exports.startServers = function (options) {
     options.host = `http://${options.host}`
     options.app = path.resolve(options.distDir, options.app)
     options.entrypoint = path.resolve(options.distDir, options.entrypoint)
-    
 
     if (serveSpa) startServer({ ...options, port: spaPort, mode: 'spa' })
     if (serveSsr) startServer({ ...options, port: ssrPort, mode: 'ssr' })
@@ -20,6 +21,9 @@ function startServer(options) {
     const { distDir, host, port, mode } = options
     const app = express()
     const fallback = mode === 'ssr' ? sendSSRRender : sendEntryPoint
+
+    // compress all responses
+    app.use(compression());
 
     app.use(express.static(distDir))
     app.get('*', fallback.bind({ options }))

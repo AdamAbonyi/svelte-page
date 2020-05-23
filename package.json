@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "@sveltech/routify": "^1.7.11",
+    "compression": "^1.7.4",
     "svelte": "^3.22.3",
     "svelte-i18n": "^3.0.3",
     "webfontloader": "^1.6.28"
