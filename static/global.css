@@ -2,6 +2,8 @@ html, body {
 	position: relative;
 	width: 100%;
 	height: 100%;
+	font-size:16px;
+	transition: font-size .40s ease-in-out;
 }
 
 body {
@@ -69,8 +71,8 @@ button:focus {
 }
 
 
-div.test { position:absolute; width:50%; height:50% }
-#NW { top:0;   left:0;    }
-#NE { top:0;   left:50%;  }
-#SW { top:50%; left:0;    }
-#SE { top:50%; left:50%;  }   
+@media only screen and (max-width: 768px) {
+	html {
+		font-size:14px;
+	}
+}

@@ -2,6 +2,8 @@
   import { _, locale } from '../../services/i18n'
   import { send, receive } from '../../services/crossfade'
 
+  let top
+
   const links = [
     { name: 'page.about.page_title', url: 'about' },
     { name: 'page.contact.page_title', url: 'contact' },
