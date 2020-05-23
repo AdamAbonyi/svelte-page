@@ -10,22 +10,22 @@
   WebFont.load({
     google: {
       families: [
-        'Play',
-        'Press Start 2P',
-        'Audiowide',
-        'Jura',
-        'Black Ops One',
+        'Audiowide'
       ],
     },
   })
 
-  setTimeout(() => {
-    WebFont.load({
-      google: {
-        families: ['Droid Sans', 'Droid Serif'],
-      },
-    })
-  }, 10000)
+  // load these only on demand
+  // setTimeout(() => {
+  //   WebFont.load({
+  //     google: {
+  //       families: ['Play',
+  //       'Press Start 2P',
+  //       'Jura',
+  //       'Black Ops One'],
+  //     },
+  //   })
+  // }, 3000)
 </script>
 
 <Router {routes} />
