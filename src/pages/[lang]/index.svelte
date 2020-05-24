@@ -5,6 +5,7 @@
   import { _, setMeta, page, locale } from '../../services/i18n'
   import { send, receive } from '../../services/crossfade'
   import Nav from '../_components/Nav.svelte'
+  import Image from '../../_components/Image/index.svelte'
 
   const t = page('index')
   setMeta(t`page_title`, t`description`)
@@ -64,14 +65,15 @@
     grid-row: 2;
   }
 
-  img {
+  .img {
+    margin: auto;
     width: 300px;
     height: 300px;
     transition: all 0.4s ease-in-out;
   }
 
   @media only screen and (max-width: 768px) {
-    img {
+    .img {
       width: 200px;
       height: 200px;
     }
@@ -79,15 +81,15 @@
 </style>
 
 <!-- routify:options index=0 -->
-
 <div class="cf" transition:fade>
   <div class="item center-item">
     <div class="content">
-      <img
-        src="/aa.webp"
-        alt="Adam Abonyi"
+      <div
+        class="img"
         out:send={{ key: 'image' }}
-        in:receive={{ key: 'image' }} />
+        in:receive={{ key: 'image' }}>
+        <Image src="aa" />
+      </div>
 
       <h1>{$_(t`page_title`)}</h1>
       <h3>{$_(t`description`)}</h3>

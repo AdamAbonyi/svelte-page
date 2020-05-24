@@ -63,7 +63,7 @@ function createConfig({ output, inlineDynamicImports, plugins = [] }) {
       postcss({
         plugins: []
       }),
-      
+
       commonjs(),
 
       // If we're building for production (npm run build
@@ -151,13 +151,13 @@ function prerender() {
 }
 
 function bundledTransform(contents) {
-  return contents.toString().replace('__SCRIPT__', `	
+  return contents.toString().replace('__SCRIPT__', `
 		<script defer src="/build/bundle.js" ></script>
 	`)
 }
 
 function dynamicTransform(contents) {
-  return contents.toString().replace('__SCRIPT__', `	
+  return contents.toString().replace('__SCRIPT__', `
 		<script type="module" defer src="https://unpkg.com/dimport@1.0.0/dist/index.mjs?module" data-main="/build/main.js"></script>
 		<script nomodule defer src="https://unpkg.com/dimport/nomodule" data-main="/build/main.js"></script>
 	`)

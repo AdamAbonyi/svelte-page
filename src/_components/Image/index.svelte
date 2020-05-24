@@ -5,13 +5,12 @@
   export let w = '100%'
   export let c = ''
   export let src = ''
-  export let style
+  export let style = ''
 
   let loaded = false
   let containerWidth
 
-  const load = (img) => img.onload = () => (loaded = true)
-
+  const load = img => (img.onload = () => (loaded = true))
 </script>
 
 <style>
@@ -24,11 +23,10 @@
     transition: 0.4s filter ease-in-out;
   }
 
-  .blur {
-    -webkit-filter: blur(10px);
-    filter: blur(10px);
-    transform: scale(1);
-  }
+  /* .blur {
+    -webkit-filter: blur(8px);
+    filter: blur(8px);
+  } */
 
   .placeholder {
     position: relative;
@@ -55,6 +53,7 @@
         class="main {c}"
         class:blur={!loaded}
         alt="alt"
+        width={w}
         srcset="/images/.generated/png/{src}-50.png"
         onerror="this.src =
         'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mMszXpSDwAFYwJEhxButQAAAABJRU5ErkJggg==';"
