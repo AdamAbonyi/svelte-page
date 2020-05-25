@@ -24,23 +24,8 @@
   * :global(h3) {
     text-align: center;
   }
-  * :global(.cf) {
-    text-align: center;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-  }
-
-  @media only screen and (max-width: 768px) {
-  }
 </style>
 
-<div class="content">
+<div>
   <slot />
 </div>

@@ -31,8 +31,8 @@
   class="github-corner"
   aria-label="View source on GitHub">
   <svg
-    width="50"
-    height="50"
+    width="70"
+    height="70"
     viewBox="0 0 250 250"
     style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0;
     right: 0;"

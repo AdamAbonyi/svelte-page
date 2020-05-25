@@ -6,6 +6,8 @@
   import { send, receive } from '../../services/crossfade'
   import Nav from '../_components/Nav.svelte'
   import Image from '../../_components/Image/index.svelte'
+  import FadePage from '../_components/FadePage.svelte'
+  import HomePageContent from '../_components/HomePageContent.svelte'
 
   const t = page('index')
   setMeta(t`page_title`, t`description`)
@@ -24,16 +26,6 @@
     filter: grayscale(100%);
   } */
 
-  .content {
-    display: absolute;
-  }
-
-  .center-item {
-    display: relative;
-    grid-column: 2;
-    grid-row: 1 / span 2;
-  }
-
   .item {
     display: flex;
     justify-content: center;
@@ -43,6 +35,12 @@
   .item > div {
     text-align: center;
     width: 100%;
+  }
+
+  .page-content {
+    display: relative;
+    grid-column: 2;
+    grid-row: 1 / span 2;
   }
 
   .item1 {
@@ -72,7 +70,26 @@
     transition: all 0.4s ease-in-out;
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 600px) {
+    .item1 {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .item2 {
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    .item3 {
+      grid-column: 1;
+      grid-row: 3;
+    }
+
+    .item4 {
+      grid-column: 2;
+      grid-row: 3;
+    }
     .img {
       width: 200px;
       height: 200px;
@@ -81,9 +98,9 @@
 </style>
 
 <!-- routify:options index=0 -->
-<div class="cf" transition:fade>
-  <div class="item center-item">
-    <div class="content">
+<FadePage>
+  <HomePageContent>
+    <div style="position:absolute; width:100%;">
       <div
         class="img"
         out:send={{ key: 'image' }}
@@ -94,7 +111,7 @@
       <h1>{$_(t`page_title`)}</h1>
       <h3>{$_(t`description`)}</h3>
     </div>
-  </div>
+  </HomePageContent>
 
   <!-- Menu path-->
   {#each links as { name, url }, i}
@@ -104,4 +121,4 @@
       </div>
     </div>
   {/each}
-</div>
+</FadePage>
