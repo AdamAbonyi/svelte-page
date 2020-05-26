@@ -12,9 +12,12 @@
 <!-- routify:options index=1 -->
 <FadePage>
   <MainContent>
-    <h1 out:send={{ key: 'about' }} in:receive={{ key: 'about' }}>
-      {$_(t`page_title`)}
-    </h1>
+    <div
+      style="display:inline"
+      out:send={{ key: 'about' }}
+      in:receive={{ key: 'about' }}>
+      <h1>{$_(t`page_title`)}</h1>
+    </div>
     <h3>{$_(t`description`)}</h3>
     <br />
 
