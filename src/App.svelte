@@ -9,9 +9,7 @@
 
   WebFont.load({
     google: {
-      families: [
-        'Audiowide'
-      ],
+      families: ['Press Start 2P'],
     },
   })
 
@@ -19,7 +17,8 @@
   // setTimeout(() => {
   //   WebFont.load({
   //     google: {
-  //       families: ['Play',
+  //       families: [
+  //       'Audiowide'
   //       'Press Start 2P',
   //       'Jura',
   //       'Black Ops One'],

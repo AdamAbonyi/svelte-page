@@ -12,6 +12,7 @@
 <!-- routify:options index=1 -->
 <FadePage>
   <MainContent>
+
     <h1 out:send={{ key: 'about' }} in:receive={{ key: 'about' }}>
       {$_(t`page_title`)}
     </h1>

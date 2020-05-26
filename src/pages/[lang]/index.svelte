@@ -1,6 +1,5 @@
 <script>
   import { goto } from '@sveltech/routify'
-  import { fade } from 'svelte/transition'
 
   import { _, setMeta, page, locale } from '../../services/i18n'
   import { send, receive } from '../../services/crossfade'
@@ -21,11 +20,6 @@
 </script>
 
 <style>
-  /* img {
-    image-rendering: crisp-edges;
-    filter: grayscale(100%);
-  } */
-
   .item {
     display: flex;
     justify-content: center;
@@ -37,10 +31,8 @@
     width: 100%;
   }
 
-  .page-content {
-    display: relative;
-    grid-column: 2;
-    grid-row: 1 / span 2;
+  .item > div > div {
+    display: inline-block;
   }
 
   .item1 {
@@ -70,6 +62,13 @@
     transition: all 0.4s ease-in-out;
   }
 
+  @media only screen and (max-width: 800px) {
+    .img {
+      width: 200px;
+      height: 200px;
+    }
+  }
+
   @media only screen and (max-width: 600px) {
     .item1 {
       grid-column: 1;
@@ -90,10 +89,46 @@
       grid-column: 2;
       grid-row: 3;
     }
-    .img {
-      width: 200px;
-      height: 200px;
-    }
+  }
+
+  .buzz {
+    display: inline-block;
+    position: relative;
+    color: inherit;
+    text-decoration: none;
+    transition: all 250ms ease;
+    transform: translatez(0);
+    perspective: 50px;
+  }
+
+  .buzz:before,
+  .buzz:after {
+    white-space: pre;
+    content: attr(data-buzz);
+    position: absolute;
+    z-index: -1;
+    opacity: 0.5;
+    transition: all 150ms ease;
+  }
+
+  .buzz:before {
+    color: darkgray;
+    top: 2px;
+    left: 2px;
+  }
+
+  .buzz:after {
+    color: lightgray;
+    bottom: 2px;
+    right: 2px;
+  }
+
+  .buzz:hover:before {
+    transform: rotatex(-15deg) rotatey(5deg) scale(1.5);
+  }
+
+  .buzz:hover:after {
+    transform: rotatey(-5deg) rotatex(15deg) scale(1.5);
   }
 </style>
 
@@ -117,7 +152,9 @@
   {#each links as { name, url }, i}
     <div class={`item item${i + 1}`}>
       <div out:send={{ key: url }} in:receive={{ key: url }}>
-        <a href={`/${$locale}/${url}`}>{$_(name)}</a>
+        <a class="buzz" data-buzz={`${$_(name)}`} href={`/${$locale}/${url}`}>
+          {$_(name)}
+        </a>
       </div>
     </div>
   {/each}

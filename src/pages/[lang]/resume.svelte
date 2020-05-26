@@ -9,10 +9,6 @@
   setMeta(t`page_title`, t`description`)
 </script>
 
-<style>
-
-</style>
-
 <!-- routify:options index=4 -->
 <FadePage>
   <MainContent>
