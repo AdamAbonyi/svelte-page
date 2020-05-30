@@ -1,4 +1,3 @@
-<!-- routify:options index=99 -->
 <script>
   import { route } from '@sveltech/routify'
   import { _, locale, setMeta, page } from '../../services/i18n'
@@ -16,11 +15,12 @@
     /* left: 50%;
     top: 50%;
     transform: translate(-50%, -50%); */
-    margin:auto;
+    margin: auto;
     text-align: center;
   }
 </style>
 
+<!-- routify:options index=99 -->
 <div class="e404">
   <div class="huge">404</div>
   <div class="big">

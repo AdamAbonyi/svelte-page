@@ -1,7 +1,6 @@
 <script>
   import { redirect } from '@sveltech/routify'
   import { locale, languages, isSupportedLanguage } from '../../services/i18n'
-
   export let lang
 
   if (!isSupportedLanguage(lang)) {
