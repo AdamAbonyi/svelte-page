@@ -91,6 +91,15 @@
     }
   }
 
+  .link {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .link:hover {
+    font-weight: bold;
+  }
+
   .buzz {
     display: inline-block;
     position: relative;
@@ -152,7 +161,7 @@
   {#each links as { name, url }, i}
     <div class={`item item${i + 1}`}>
       <div out:send={{ key: url }} in:receive={{ key: url }}>
-        <a class="buzz" data-buzz={`${$_(name)}`} href={`/${$locale}/${url}`}>
+        <a class="link" data-buzz={`${$_(name)}`} href={`/${$locale}/${url}`}>
           {$_(name)}
         </a>
       </div>

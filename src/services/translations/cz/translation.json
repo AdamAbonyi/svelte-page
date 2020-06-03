@@ -19,9 +19,12 @@
     "about": {
       "page_title": "O Mně",
       "description": "Popis stránky o mně",
-      "text1": "Od malička mě baví vše kolem počítačů. Poslední dobou jsem se zabavoval děláním koblih v blenderu nebo se učil jak hackovat na Darknet Diaries.",
-      "text2": "Proto jsem se rozhodl udělat tyhle stránky v technologii kterou jsem ještě nevyzkoušel, abych vám o tom všem mohl povědět. Jo a taky miluju SvelteJs."
-
+      "text1": "Hral si s počítači od mala. Nejen hry ale i skripy a dosové příkazy.",
+      "text2": "Častokrát jsem je rozbil, koukal se jak byly spraveny a rozbil je ještě více.",
+      "text3": "Začal programovat na 386 v Basic a 3D modelovat v 3D Studio Max.",
+      "text4": "Programoval na základce, střední i vejšce, zůčastnil se několik programovacích soutěží (a něco i vyhrál).",
+      "text5": "Mám rád IT hračky a nemám rád sociální sítě.",
+      "text6": "Mám rád hackerské příběhy - film Mr. Robot nebo podcasty Malicious Life a Darknet Diaries."
     },
     "contact": {
       "page_title": "Kontakt",

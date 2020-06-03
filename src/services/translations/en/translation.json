@@ -19,8 +19,12 @@
     "about": {
       "page_title": "About Me",
       "description": "... some info about me",
-      "text1": "I like to do stuff like programming and playing with computers. I like to do basically everything with computers. Recently I enjoyed modeling donuts in blender or learning how to hack stuff on Darknet Diaries.",
-      "text2": "I decided to create this page in a technology I never worked with just so I can write about it. Oh and I love SvelteJs if you couldnt tell."
+      "text1": "Played with computers since I can remember. Not only games, but scripts, DOS comands, etc..",
+      "text2": "Broke them a lot and watched them get repaired beak it even more.",
+      "text3": "Started programming on a 386 in Basic and 3D modeling in 3D Studio Max.",
+      "text4": "Programed during grammar school, high school and university, entered several programming competitions (and won some).",
+      "text5": "IT gadgets are my thing, but I dont like social networks.",
+      "text6": "Enjoy hacking stories - Mr. Robot, Malicious Life and Darknet Diaries podcasts."
     },
     "contact": {
       "page_title": "Contact",

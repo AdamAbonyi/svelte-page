@@ -23,6 +23,6 @@
   }
 </style>
 
-<div class="content" transition:fade>
+<div class="content" transition:fade={{ duration: 400 }}>
   <slot />
 </div>
