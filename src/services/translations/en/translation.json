@@ -1,7 +1,7 @@
 {
   "nav": {
     "home": "Home",
-    "about": "About Me",
+    "about": "About",
     "contact": "Contact",
     "projects": "Projects",
     "resume": "Resume",
@@ -17,14 +17,25 @@
       "description": "Developer, IT enthusiast"
     },
     "about": {
-      "page_title": "About Me",
-      "description": "... some info about me",
-      "text1": "Played with computers since I can remember. Not only games, but scripts, DOS comands, etc..",
-      "text2": "Broke them a lot and watched them get repaired beak it even more.",
-      "text3": "Started programming on a 386 in Basic and 3D modeling in 3D Studio Max.",
-      "text4": "Programed during grammar school, high school and university, entered several programming competitions (and won some).",
-      "text5": "IT gadgets are my thing, but I dont like social networks.",
-      "text6": "Enjoy hacking stories - Mr. Robot, Malicious Life and Darknet Diaries podcasts."
+      "page_title": "About",
+      "description": "me and this page",
+      "intro0": "Hi, I am Adam.",
+      "intro1": "Welcome to my page, that I created to showcase what I have learned in front-end development while trying to apply it to something new. Can you guess what framework is used to create this site?",
+
+      "subtitleMe": "About Me",
+      "me": [
+        "I was always fascinated with computers and technology. My favorite pasttime was breaking our home computer watch it being fixed and breaking it even more. Eventually I learned to script and program and among other things I learned the basics of 3D modeling.",
+        "I programmed in grammar school, high school up until university, won a few competitions (not THAT many).",
+        "I like to dabble in everything but mainly enjoy front-end development, dockerization of applications, CI, tests and all basically building a project from the ground up.",
+        "Recently I enjoyed a tv series Mr. Robot and then moved to similar themed podcasts: Malicious Life and Darknet Diaries."
+      ],
+      
+      "subtitlePage": "About the Page",
+      "page": [
+        "This page was because I wanted to learn a new FE framework. Do you know which one it is already? Try to find out, I have left a hint on this page",
+        "Also as you have probably noticed I played with animations, server side rendering, and many other things.",
+        "If you are interested in how I implemented this site, press the Octocat in the top right folder."
+      ]
     },
     "contact": {
       "page_title": "Contact",

@@ -1,3 +1,32 @@
+<!-- routify:options index=0 -->
+<FadePage fullscreen>
+  <HomePageContent>
+    <div style="position:absolute; width:100%;">
+      <div
+        class="img"
+        alt="this page was created in SvelteJs using Routify"
+        out:send={{ key: 'image' }}
+        in:receive={{ key: 'image' }}>
+        <Image src="aa" />
+      </div>
+
+      <h1>{$_(t`page_title`)}</h1>
+      <h3>{$_(t`description`)}</h3>
+    </div>
+  </HomePageContent>
+
+  <!-- Menu path-->
+  {#each links as { name, url }, i}
+    <div class={`item item${i + 1}`}>
+      <div out:send={{ key: url }} in:receive={{ key: url }}>
+        <a class="link" data-buzz={`${$_(name)}`} href={`/${$locale}/${url}`}>
+          {$_(name)}
+        </a>
+      </div>
+    </div>
+  {/each}
+</FadePage>
+
 <script>
   import { goto } from '@sveltech/routify'
 
@@ -140,31 +169,3 @@
     transform: rotatey(-5deg) rotatex(15deg) scale(1.5);
   }
 </style>
-
-<!-- routify:options index=0 -->
-<FadePage>
-  <HomePageContent>
-    <div style="position:absolute; width:100%;">
-      <div
-        class="img"
-        out:send={{ key: 'image' }}
-        in:receive={{ key: 'image' }}>
-        <Image src="aa" />
-      </div>
-
-      <h1>{$_(t`page_title`)}</h1>
-      <h3>{$_(t`description`)}</h3>
-    </div>
-  </HomePageContent>
-
-  <!-- Menu path-->
-  {#each links as { name, url }, i}
-    <div class={`item item${i + 1}`}>
-      <div out:send={{ key: url }} in:receive={{ key: url }}>
-        <a class="link" data-buzz={`${$_(name)}`} href={`/${$locale}/${url}`}>
-          {$_(name)}
-        </a>
-      </div>
-    </div>
-  {/each}
-</FadePage>

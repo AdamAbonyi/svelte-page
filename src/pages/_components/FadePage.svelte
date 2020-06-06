@@ -1,15 +1,20 @@
 <script>
   import { fade } from 'svelte/transition'
+
+  export let fullscreen = false
 </script>
 
 <style>
+  .fullscreen {
+    bottom:0
+  }
+
   .content {
     text-align: center;
     position: absolute;
     left: 0;
     right: 0;
     top: 0;
-    bottom: 0;
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -23,6 +28,6 @@
   }
 </style>
 
-<div class="content" transition:fade={{ duration: 400 }}>
+<div class="content" class:fullscreen transition:fade={{ duration: 400 }}>
   <slot />
 </div>
