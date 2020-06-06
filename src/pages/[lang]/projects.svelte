@@ -1,14 +1,3 @@
-<script>
-  import { _, setMeta, page } from '../../services/i18n'
-  import { send, receive } from '../../services/crossfade'
-
-  import FadePage from '../_components/FadePage.svelte'
-  import MainContent from '../_components/MainContent.svelte'
-
-  const t = page('projects')
-  setMeta(t`page_title`, t`description`)
-</script>
-
 <!-- routify:options index=3 -->
 <FadePage>
   <MainContent>
@@ -17,8 +6,88 @@
     </h1>
     <h3>{$_(t`description`)}</h3>
 
-    <span>
-      Create a list of projects. Each project will leade to a separate page
-    </span>
+    {#each projects as { name, description, images }, i}
+      <section class="box {i % 2 ? 'even' : 'odd'}">
+        <h2>{name}</h2>
+        <p>{description}</p>
+        <div class="images">
+          {#each images as img, index}
+            <img src={img} alt="{index + 1}. image of {name}" />
+          {/each}
+        </div>
+      </section>
+    {/each}
   </MainContent>
 </FadePage>
+
+<script>
+  import { ready } from '@sveltech/routify'
+  import { _, setMeta, page } from '../../services/i18n'
+  import { send, receive } from '../../services/crossfade'
+
+  import FadePage from '../_components/FadePage.svelte'
+  import MainContent from '../_components/MainContent.svelte'
+
+  import projects from '../../projects.json'
+
+  const t = page('projects')
+  setMeta(t`page_title`, t`description`)
+</script>
+
+<style>
+  .box {
+    margin-bottom: 24px;
+  }
+
+  .odd {
+    margin-right: 20%;
+  }
+
+  .odd h2 {
+    text-align: left;
+  }
+
+  .odd .images {
+    text-align: left;
+  }
+
+  .even {
+    margin-left: 20%;
+  }
+
+  .even h2 {
+    text-align: right;
+  }
+
+  .even .images {
+    text-align: right;
+  }
+
+  p {
+    text-align: justify;
+  }
+
+  img {
+    height: 120px;
+    margin:4px;
+  }
+
+  .images {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -4px;
+  }
+
+  .even .images {
+    justify-content:flex-end;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .odd {
+      margin-right: unset;
+    }
+    .even {
+      margin-left: unset;
+    }
+  }
+</style>

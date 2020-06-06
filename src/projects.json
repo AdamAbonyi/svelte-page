@@ -1,0 +1,25 @@
+[
+    {
+        "name": "Blender",
+        "description": "Lorem ipsum dolor sit amet, ei lobortis consetetur vix, est in facer deleniti principes.",
+        "images": [
+            "/elephant.webp",
+            "/elephant.webp",
+            "/elephant.webp"
+        ]
+    },
+    {
+        "name": "Something Else",
+        "description": "Lorem ipsum dolor sit amet, ei lobortis consetetur vix, est in facer deleniti principes.",
+        "images": [
+            "/elephant.webp"
+        ]
+    },
+    {
+        "name": "Something More More Moar",
+        "description": "Lorem ipsum dolor sit amet, ei lobortis consetetur vix, est in facer deleniti principes.",
+        "images": [
+            "/elephant.webp"
+        ]
+    }
+]

@@ -21,7 +21,6 @@
       "description": "me and this page",
       "intro0": "Hi, I am Adam.",
       "intro1": "Welcome to my page, that I created to showcase what I have learned in front-end development while trying to apply it to something new. Can you guess what framework is used to create this site?",
-
       "subtitleMe": "About Me",
       "me": [
         "I was always fascinated with computers and technology. My favorite pasttime was breaking our home computer watch it being fixed and breaking it even more. Eventually I learned to script and program and among other things I learned the basics of 3D modeling.",
@@ -29,7 +28,6 @@
         "I like to dabble in everything but mainly enjoy front-end development, dockerization of applications, CI, tests and all basically building a project from the ground up.",
         "Recently I enjoyed a tv series Mr. Robot and then moved to similar themed podcasts: Malicious Life and Darknet Diaries."
       ],
-      
       "subtitlePage": "About the Page",
       "page": [
         "This page was because I wanted to learn a new FE framework. Do you know which one it is already? Try to find out, I have left a hint on this page",

@@ -88,7 +88,6 @@
     margin: auto;
     width: 300px;
     height: 300px;
-    transition: all 0.4s ease-in-out;
   }
 
   @media only screen and (max-width: 800px) {
