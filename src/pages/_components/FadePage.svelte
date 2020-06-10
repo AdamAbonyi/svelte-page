@@ -1,3 +1,7 @@
+<div class="content" class:fullscreen transition:fade={{ duration: 400 }}>
+  <slot />
+</div>
+
 <script>
   import { fade } from 'svelte/transition'
 
@@ -6,7 +10,8 @@
 
 <style>
   .fullscreen {
-    bottom:0
+    bottom: 0;
+    height: 100%;
   }
 
   .content {
@@ -27,7 +32,3 @@
     }
   }
 </style>
-
-<div class="content" class:fullscreen transition:fade={{ duration: 400 }}>
-  <slot />
-</div>
