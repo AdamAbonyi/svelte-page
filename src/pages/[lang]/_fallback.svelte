@@ -1,6 +1,16 @@
+<!-- routify:options index=99 -->
+<div class="e404">
+  <div class="huge">404</div>
+  <div class="big">
+    {$_(t`page_not_found`)}
+    <!-- link to the parent folder of _fallback.svelte -->
+    <a href={$route.last.path}>{$_(t`go_back`)}</a>
+  </div>
+</div>
+
 <script>
   import { route } from '@sveltech/routify'
-  import { _, locale, setMeta, page } from '../../services/i18n'
+  import { _, locale, setMeta, page } from '@/services/i18n'
 
   const t = page('404')
   setMeta(t`page_not_found`)
@@ -19,13 +29,3 @@
     text-align: center;
   }
 </style>
-
-<!-- routify:options index=99 -->
-<div class="e404">
-  <div class="huge">404</div>
-  <div class="big">
-    {$_(t`page_not_found`)}
-    <!-- link to the parent folder of _fallback.svelte -->
-    <a href={$route.last.path}>{$_(t`go_back`)}</a>
-  </div>
-</div>

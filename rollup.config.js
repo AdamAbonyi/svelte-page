@@ -1,13 +1,16 @@
 /* eslint-disable */
-import svelte from 'rollup-plugin-svelte';
-import resolve from '@rollup/plugin-node-resolve';
+import alias from '@rollup/plugin-alias';
 import commonjs from '@rollup/plugin-commonjs';
-import postcss from 'rollup-plugin-postcss';
+import copy from 'rollup-plugin-copy'
 import json from '@rollup/plugin-json';
 import livereload from 'rollup-plugin-livereload';
+import postcss from 'rollup-plugin-postcss';
+import resolve from '@rollup/plugin-node-resolve';
+import svelte from 'rollup-plugin-svelte';
 import { terser } from 'rollup-plugin-terser';
-import copy from 'rollup-plugin-copy'
+
 import del from 'del'
+import path from 'path'
 
 const { imageOptimizer } = require( './src/services/imageOptimizer')
 
@@ -50,6 +53,15 @@ function createConfig({ output, inlineDynamicImports, plugins = [] }) {
         }
       }),
 
+      alias({
+        entries: [
+          {
+            find: '@',
+            replacement: path.resolve(__dirname, 'src')
+          }
+        ],
+
+      }),
       // If you have external dependencies installed from
       // npm, you'll most likely need these plugins. In
       // some cases you'll need additional configuration —

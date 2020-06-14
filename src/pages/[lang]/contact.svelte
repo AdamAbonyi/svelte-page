@@ -1,14 +1,3 @@
-<script>
-  import { _, setMeta, page } from '../../services/i18n'
-  import { send, receive } from '../../services/crossfade'
-
-  import FadePage from '../_components/FadePage.svelte'
-  import MainContent from '../_components/MainContent.svelte'
-
-  const t = page('contact')
-  setMeta(t`page_title`, t`description`)
-</script>
-
 <!-- routify:options index=2 -->
 <FadePage>
   <MainContent>
@@ -23,3 +12,14 @@
     </span>
   </MainContent>
 </FadePage>
+
+<script>
+  import { _, setMeta, page } from '@/services/i18n'
+  import { send, receive } from '@/services/crossfade'
+
+  import FadePage from '@/pages/_components/FadePage.svelte'
+  import MainContent from '@/pages/_components/MainContent.svelte'
+
+  const t = page('contact')
+  setMeta(t`page_title`, t`description`)
+</script>

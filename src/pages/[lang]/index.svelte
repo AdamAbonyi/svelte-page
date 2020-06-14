@@ -30,12 +30,12 @@
 <script>
   import { goto } from '@sveltech/routify'
 
-  import { _, setMeta, page, locale } from '../../services/i18n'
-  import { send, receive } from '../../services/crossfade'
-  import Nav from '../_components/Nav.svelte'
-  import Image from '../../_components/Image/index.svelte'
-  import FadePage from '../_components/FadePage.svelte'
-  import HomePageContent from '../_components/HomePageContent.svelte'
+  import { _, setMeta, page, locale } from '@/services/i18n'
+  import { send, receive } from '@/services/crossfade'
+  import Image from '@/_components/Image/index.svelte'
+  import Nav from '@/pages/_components/Nav.svelte'
+  import FadePage from '@/pages/_components/FadePage.svelte'
+  import HomePageContent from '@/pages/_components/HomePageContent.svelte'
 
   const t = page('index')
   setMeta(t`page_title`, t`description`)

@@ -5,10 +5,16 @@
       {$_(t`page_title`)}
     </h1>
     <h3>{$_(t`description`)}</h3>
-
     {#each projects as { name, description, images }, i}
       <section class="box {i % 2 ? 'even' : 'odd'}">
-        <h2>{name}</h2>
+        <div
+          style="width:100%; min-height:40px;"
+          out:send={{ key: `projects${i}` }}
+          in:receive={{ key: `projects${i}` }}>
+          <a href="projects/123">
+            <h2>{name}</h2>
+          </a>
+        </div>
         <p>{description}</p>
         <div class="images">
           {#each images as img, index}
@@ -22,13 +28,13 @@
 
 <script>
   import { ready } from '@sveltech/routify'
-  import { _, setMeta, page } from '../../services/i18n'
-  import { send, receive } from '../../services/crossfade'
+  import { _, setMeta, page } from '@/services/i18n'
+  import { send, receive } from '@/services/crossfade'
 
-  import FadePage from '../_components/FadePage.svelte'
-  import MainContent from '../_components/MainContent.svelte'
+  import FadePage from '@/pages/_components/FadePage.svelte'
+  import MainContent from '@/pages/_components/MainContent.svelte'
 
-  import projects from '../../projects.json'
+  import projects from '@/projects.json'
 
   const t = page('projects')
   setMeta(t`page_title`, t`description`)
@@ -58,7 +64,6 @@
   .even h2 {
     text-align: right;
   }
-
   .even .images {
     text-align: right;
   }
@@ -69,7 +74,7 @@
 
   img {
     height: 120px;
-    margin:4px;
+    margin: 4px;
   }
 
   .images {
@@ -79,7 +84,7 @@
   }
 
   .even .images {
-    justify-content:flex-end;
+    justify-content: flex-end;
   }
 
   @media only screen and (max-width: 600px) {
