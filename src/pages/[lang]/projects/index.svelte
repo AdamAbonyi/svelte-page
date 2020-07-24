@@ -5,20 +5,22 @@
       {$_(t`page_title`)}
     </h1>
     <h3>{$_(t`description`)}</h3>
-    {#each projects as { name, description, images }, i}
+    {#each projects as { id, title, description, images }, i}
       <section class="box {i % 2 ? 'even' : 'odd'}">
         <div
           style="width:100%; min-height:40px;"
-          out:send={{ key: `projects${i}` }}
-          in:receive={{ key: `projects${i}` }}>
-          <a href="projects/123">
-            <h2>{name}</h2>
-          </a>
+          out:send={{ key: `${id}` }}
+          in:receive={{ key: `${id}` }}>
+          <span class={i % 2 ? 'even' : 'odd'}>
+            <a href={`projects/${id}`}>
+              <h2>{title}</h2>
+            </a>
+          </span>
+          <p>{description}</p>
         </div>
-        <p>{description}</p>
         <div class="images">
           {#each images as img, index}
-            <img src={img} alt="{index + 1}. image of {name}" />
+            <img src={img} alt="{index + 1}. image of {title}" />
           {/each}
         </div>
       </section>
@@ -47,6 +49,8 @@
 
   .odd {
     margin-right: 20%;
+    display: inline;
+    margin-left: 0;
   }
 
   .odd h2 {

@@ -1,6 +1,7 @@
 [
     {
-        "name": "Blender",
+        "id": "blender",
+        "title": "Blender",
         "description": "Lorem ipsum dolor sit amet, ei lobortis consetetur vix, est in facer deleniti principes.",
         "images": [
             "/elephant.webp",
@@ -9,14 +10,16 @@
         ]
     },
     {
-        "name": "Something Else",
+        "id": "sth-else",
+        "title": "Something Else",
         "description": "Lorem ipsum dolor sit amet, ei lobortis consetetur vix, est in facer deleniti principes.",
         "images": [
             "/elephant.webp"
         ]
     },
     {
-        "name": "Something More More Moar",
+        "id": "sth-more",
+        "title": "Something More More Moar",
         "description": "Lorem ipsum dolor sit amet, ei lobortis consetetur vix, est in facer deleniti principes.",
         "images": [
             "/elephant.webp"
